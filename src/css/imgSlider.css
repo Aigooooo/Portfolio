@@ -1,0 +1,52 @@
+.slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* Fade effect over 0.5 seconds */
+  cursor: pointer;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+button {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  z-index: 1;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}

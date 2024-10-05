@@ -1,0 +1,39 @@
+body {
+  background-color: #1f2833;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Full height of the viewport */
+  text-align: center;
+  color: white;
+}
+
+.intro h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 5rem;
+}
+
+.intro h3 {
+  margin: 0; /* Remove default margin */
+  color: #66fcf1;
+  font-weight: lighter;
+}
+
+.socials {
+  margin: 2rem;
+}
+
+.socials img {
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+  size: 10px;
+  transform: scale(1.2);
+}

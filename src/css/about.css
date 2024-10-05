@@ -1,0 +1,42 @@
+.container {
+  width: 100vw;
+  height: 75vh;
+  display: flex;
+}
+
+.container .left {
+  width: 50%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .right {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .left .slider img {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.container .right {
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-top: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container .left .slider img {
+    width: 100%;
+  }
+}

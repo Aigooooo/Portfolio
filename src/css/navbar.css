@@ -1,0 +1,99 @@
+.navbar {
+  background-color: #66fcf1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  position: relative;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  text-decoration: none;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar ul li {
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transform: scale(1.05);
+  text-decoration-thickness: 2px;
+  -webkit-text-stroke: 0.5px black;
+}
+
+.navbar ul li a.active {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  -webkit-text-stroke: 0.5px black;
+}
+.burger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+  .burger {
+    display: flex; /* Show burger icon */
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #66fcf1;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(102, 252, 241, 0.5);
+  }
+
+  .menu.close {
+    display: none;
+  }
+
+  .menu.open {
+    display: flex; /* Show menu when open */
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu li {
+    padding: 0.5rem; /* Space out menu items */
+    text-align: center; /* Center align text */
+  }
+}
