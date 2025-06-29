@@ -6,11 +6,12 @@ import Portfolio from "./pages/portfolio";
 import Gallery from "./pages/gallery";
 import Contact from "./pages/contact";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   return (
-    <>
-      <Router>
+    <HelmetProvider>
+      <Router basename="/Portfolio">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -23,7 +24,7 @@ function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </Router>
-    </>
+    </HelmetProvider>
   );
 }
 

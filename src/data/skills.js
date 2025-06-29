@@ -15,7 +15,8 @@ const skills = {
   ],
   "Frameworks & Libraries": [
     { name: "Laravel", years: 2 },
-    { name: "React", years: 1 }
+    { name: "React", years: 1 },
+    { name: "Node.js", years: 0.5 }
   ],
   "Databases": [
     { name: "MySQL", years: 3 },
@@ -27,7 +28,7 @@ const skills = {
     { name: "Docker", years: 1.5 },
     { name: "CI/CD", years: 1.5 },
     { name: "Linux", years: 2 },
-    { name: "Apache", years: 1.5 }
+    { name: "Bash", years: 2 }
   ],
   "Data & Integration": [
     { name: "ETL Processes", years: 1.5 }

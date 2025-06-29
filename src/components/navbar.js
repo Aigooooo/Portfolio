@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const navItems = [
-  { name: 'HOME', path: '/home' },
+  { name: 'HOME', path: '/' },
   { name: 'ABOUT', path: '/about' },
   { name: 'PORTFOLIO', path: '/portfolio' },
   { name: 'GALLERY', path: '/gallery' },
