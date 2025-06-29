@@ -1,3 +1,10 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: *.json
+Disallow: *.md
+
+# Sitemap location
+Sitemap: https://aigooooo.github.io/Portfolio/sitemap.xml
