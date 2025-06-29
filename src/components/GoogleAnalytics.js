@@ -9,6 +9,8 @@ export const initGA = () => {
     window.gtag('config', GA_MEASUREMENT_ID, {
       page_title: document.title,
       page_location: window.location.href,
+      cookie_domain: 'aigooooo.github.io',
+      cookie_flags: 'SameSite=None;Secure'
     });
   }
 };
@@ -19,6 +21,8 @@ export const trackPageView = (url, title) => {
     window.gtag('config', GA_MEASUREMENT_ID, {
       page_title: title,
       page_location: url,
+      cookie_domain: 'aigooooo.github.io',
+      cookie_flags: 'SameSite=None;Secure'
     });
   }
 };
