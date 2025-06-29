@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 const SEO = ({ 
   title = "Edgar Alcover Jr. - Software Developer Portfolio",
   description = "Professional Software Developer from Cebu, Philippines. Specializing in PHP, React, Backend Development and Web Development. View my portfolio, projects, and get in touch for freelance work.",
-  keywords = "Edgar Alcover Jr, Software Developer, Web Developer, Portfolio, PHP Developer, React Developer, Software Developer, Cebu Philippines, Freelance Developer, Full Stack Developer",
+  keywords = "Edgar Alcover Jr, Software Developer, Web Developer, Portfolio, PHP Developer, React Developer, Software Developer, Cebu Philippines, Freelance Developer, Full Stack Developer, Edgar, Alcover, Github Pages, Github Portfolio, Github Projects",
   url = "https://aigooooo.github.io/Portfolio/",
   image = "https://aigooooo.github.io/Portfolio/logo512.png",
   type = "website"
