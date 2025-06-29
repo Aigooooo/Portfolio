@@ -1,5 +1,13 @@
+:root {
+  --primary-color: #66fcf1;
+  --secondary-color: #1f2833;
+  --accent-color: #45a29e;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+}
+
 body {
-  background-color: #1f2833;
+  background-color: var(--secondary-color);
 }
 
 .intro {
@@ -7,33 +15,237 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh; /* Full height of the viewport */
+  min-height: 80vh;
   text-align: center;
-  color: white;
+  color: var(--text-light);
+  padding: 2rem;
+  margin-top: 90px;
 }
 
 .intro h1 {
-  margin: 0; /* Remove default margin */
-  font-size: 5rem;
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
 }
 
 .intro h3 {
-  margin: 0; /* Remove default margin */
-  color: #66fcf1;
-  font-weight: lighter;
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: 300;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
 .socials {
-  margin: 2rem;
+  margin: 2rem 0;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation-delay: 0.6s;
+}
+
+.socials a {
+  display: inline-block;
+  padding: 1rem;
+  background-color: rgba(102, 252, 241, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.socials a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px) scale(1.1);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 25px rgba(102, 252, 241, 0.3);
 }
 
 .socials img {
-  padding: 0.2rem 0.5rem;
+  width: 32px;
+  height: 32px;
+  transition: filter 0.3s ease;
+}
+
+.socials a:hover img {
+  filter: brightness(1.2) contrast(1.1);
+  opacity: 0.9;
+}
+
+/* Add a subtle animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro > * {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.intro h1 {
+  animation-delay: 0.2s;
+}
+
+.intro h3 {
+  animation-delay: 0.4s;
+}
+
+.socials {
+  animation-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro {
+    min-height: 70vh;
+    padding: 1rem;
+  }
+  
+  .intro h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+  
+  .intro h3 {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+  
+  .socials {
+    gap: 1rem;
+  }
+  
+  .socials img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .cv-download {
+    margin-top: 1.5rem;
+  }
+  
+  .download-cv-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro {
+    min-height: 60vh;
+    padding: 0.5rem;
+  }
+  
+  .intro h1 {
+    font-size: clamp(1.8rem, 12vw, 3rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .intro h3 {
+    font-size: clamp(0.9rem, 6vw, 1.3rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .socials {
+    margin: 1.5rem 0;
+    gap: 0.8rem;
+  }
+  
+  .socials a {
+    padding: 0.8rem;
+  }
+  
+  .socials img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .cv-download {
+    margin-top: 1rem;
+  }
+  
+  .download-cv-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .download-icon {
+    font-size: 1rem;
+  }
+}
+
+/* High-resolution displays */
+@media (min-width: 1200px) {
+  .intro {
+    padding: 3rem;
+  }
+  
+  .socials {
+    gap: 2rem;
+  }
+  
+  .socials a {
+    padding: 1.2rem;
+  }
+  
+  .socials img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* CV Download Section */
+.cv-download {
+  margin-top: 2rem;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+
+.download-cv-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--text-dark);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(102, 252, 241, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.download-cv-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 252, 241, 0.4);
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+}
+
+.download-cv-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.download-icon {
+  font-size: 1.2rem;
   transition: transform 0.3s ease;
 }
 
-.socials img:hover {
-  size: 10px;
+.download-cv-btn:hover .download-icon {
   transform: scale(1.2);
 }

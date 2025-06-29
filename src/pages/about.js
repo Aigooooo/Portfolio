@@ -1,6 +1,7 @@
-// import profilePic from "../assets/profile_pic.jpg";
 import ImgSlider from "../components/imgSlider";
+import skills from "../data/skills";
 import "../css/about.css";
+
 function About() {
   return (
     <>
@@ -11,44 +12,72 @@ function About() {
         <div className="right">
           <h1>About Me</h1>
           <p>
-            Hello my name <strong>is Edgar Alcover Jr.</strong>, a passioanate
-            Software Developer based in <strong>Cebu, Philippines</strong>.
-            <br /> I mainly work on{" "}
-            <strong> web and software development</strong> and has experience in
-            working on both Frontend and
-            <br /> Backend Developments of a system using{" "}
-            <strong>PHP, React, .NET, SQL, Mongodb, etc. </strong>
+            Hey there! I'm <strong>Edgar Alcover Jr.</strong> — a <strong>Mid-Level 
+            Software Developer</strong> from <strong>Cebu, Philippines</strong> who 
+            specializes in backend development and web development.
+          </p>
+          <p>
+            With <strong>3+ years of PHP expertise</strong>, I specialize in maintaining and optimizing 
+            business-critical applications. I also have hands-on experience with 
+            <strong>Node.js, TypeScript, and AWS</strong> for rebuilding legacy applications into modern, 
+            scalable solutions.
+            I recently developed an innovative concept for transforming <strong>1,000+ 
+              legacy classes</strong> into a configurable platform — an idea that 
+              earned recognition at <strong>JobTarget's 2025 Hackathon</strong>.
           </p>
           <h2>My Journey</h2>
           <p>
-            I began my career in <strong>2022</strong> as a{" "}
-            <strong>Software Developer Intern</strong> at{" "}
-            <strong>Talleco JobTarget Philippines</strong> and was
-            <br /> later on absorbed as a{" "}
-            <strong>Junior Software Developer.</strong>
+            My story started in <strong>2022</strong> when I joined <strong>Talleco JobTarget Philippines</strong> 
+            as an intern and was hired full-time before graduation. 
+            In just <strong>3 years</strong>, I've evolved from curious intern to 
+            <strong>Mid-Level Software Developer</strong>, earning multiple <strong>"Ace of Initiative" awards</strong>
+            and becoming a trusted mentor, which gave me the opportunity to speak at the <strong>University of Cebu Lapu-lapu and Mandaue</strong> 
+            about PHP and Laravel to students.
           </p>
-          <h3> Responsibilities in my current job: </h3>
+          <h3>What I Bring to the Table:</h3>
           <ul>
             <li>
-              Maintaining multiple legacy applications using PHP, running on a
-              linux server
+              <strong>🏆 Problem Solver:</strong> Recognized for innovative solutions in legacy system modernization and hackathon achievements
             </li>
             <li>
-              Creating documentation of the legacy applications to avoid
-              knowledge gaps that can lead to operational <br />
-              inefficiencies and increased dependency on a few key individuals.{" "}
+              <strong>🎯 Business Impact:</strong> Track record of optimizing business-critical applications and understanding stakeholder needs
             </li>
             <li>
-              Scrape client job sites and integrate them into our system using
-              Python and ETL.
+              <strong>👨‍🏫 Knowledge Sharing:</strong> Enjoy sharing insights and learning from industry professionals at all levels
             </li>
-            <li>Integrate client's api into our system.</li>
             <li>
-              In-charge of managing the interns and making sure they get the
-              proper knowledge and experience <br />
-              in working with us
+              <strong>🔧 Technical Evolution:</strong> Backend specialist expanding into cloud architectures, Docker, and modern development practices
+            </li>
+            <li>
+              <strong>📈 Continuous Learning:</strong> Committed to professional development and staying current with technology
             </li>
           </ul>
+        </div>
+      </div>
+      
+      {/* Skills Section */}
+      <div className="skills-section">
+        <div className="skills-container">
+          <h2>Skills</h2>
+          <p>Here are the skills I have and offer</p>
+          
+          <div className="skills-grid">
+            {Object.entries(skills).map(([category, skillList]) => (
+              <div key={category} className="skill-category">
+                <h3>{category}</h3>
+                <div className="skills-list">
+                  {skillList.map((skill, index) => (
+                    <div key={index} className="skill-item">
+                      <div className="skill-header">
+                        <span className="skill-name">{skill.name}</span>
+                        <span className="skill-years">{skill.years}+ years</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

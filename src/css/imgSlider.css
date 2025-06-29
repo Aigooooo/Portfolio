@@ -7,6 +7,7 @@
   width: 100%;
   overflow: hidden;
   height: auto;
+  z-index: 1;
 }
 
 .slider-image {
@@ -28,7 +29,8 @@
   opacity: 0;
 }
 
-button {
+.slider .prev,
+.slider .next {
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
@@ -37,16 +39,25 @@ button {
   font-size: 24px;
   cursor: pointer;
   color: white;
-  z-index: 1;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+.slider .prev:hover,
+.slider .next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
-.prev {
+
+.slider .prev {
   left: 10px;
 }
 
-.next {
+.slider .next {
   right: 10px;
 }

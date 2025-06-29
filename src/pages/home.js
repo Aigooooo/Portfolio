@@ -4,6 +4,17 @@ import githubLogo from "../assets/github.png";
 import linkedinLogo from "../assets/linkedin.png";
 
 function Home() {
+  const handleDownloadCV = () => {
+    // Direct download using window.location - bypasses React Router
+    const link = document.createElement('a');
+    link.href = process.env.PUBLIC_URL + '/Edgar_Alcover_Jr_Resume.pdf';
+    link.download = 'Edgar_Alcover_Jr_Resume.pdf';
+    link.target = '_blank'; // Open in new tab as fallback
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <div className="intro">
@@ -33,6 +44,13 @@ function Home() {
           >
             <img src={linkedinLogo} alt="linkedin logo" />
           </a>
+        </div>
+        
+        <div className="cv-download">
+          <button onClick={handleDownloadCV} className="download-cv-btn">
+            <span className="download-icon">📄</span>
+            Download CV
+          </button>
         </div>
       </div>
     </>
