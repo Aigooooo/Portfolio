@@ -5,6 +5,7 @@ import About from "./pages/about";
 import Portfolio from "./pages/portfolio";
 import Gallery from "./pages/gallery";
 import Contact from "./pages/contact";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router basename="/Portfolio">
+        <GoogleAnalytics />
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />

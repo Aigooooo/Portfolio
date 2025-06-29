@@ -3,10 +3,14 @@ import instaLogo from "../assets/insta.png";
 import githubLogo from "../assets/github.png";
 import linkedinLogo from "../assets/linkedin.png";
 import SEO from "../components/SEO";
+import { trackEvent } from "../components/GoogleAnalytics";
 
 function Home() {
   const handleDownloadCV = () => {
     try {
+      // Track the download event in Google Analytics
+      trackEvent('download', 'engagement', 'CV_Download', 1);
+      
       // Create a more robust download function
       const link = document.createElement('a');
       
@@ -43,10 +47,12 @@ function Home() {
         }, 1000);
       }, 100);
       
-      console.log('CV download initiated');
+      console.log('CV download initiated and tracked in Analytics');
       
     } catch (error) {
       console.error('Download failed:', error);
+      // Track the error
+      trackEvent('error', 'engagement', 'CV_Download_Failed', 1);
       // Fallback: open in new tab
       window.open('/Edgar_Alcover_Jr_Resume.pdf', '_blank');
     }
